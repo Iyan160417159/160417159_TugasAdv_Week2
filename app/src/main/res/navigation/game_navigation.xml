@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_navigation"
+    app:startDestination="@id/mainGameFragment">
+
+    <fragment
+        android:id="@+id/mainGameFragment"
+        android:name="com.ubaya.tugasadv160417159_week2.MainGameFragment"
+        android:label="MainGameScreen"
+        tools:layout="@layout/fragment_main_game" >
+        <action
+            android:id="@+id/actionGameOver"
+            app:destination="@id/gameOverFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOverFragment"
+        android:name="com.ubaya.tugasadv160417159_week2.GameOverFragment"
+        android:label="GameOver Screen"
+        tools:layout="@layout/fragment_game_over" >
+        <action
+            android:id="@+id/actionMainGame"
+            app:destination="@id/mainGameFragment" />
+        <argument
+            android:name="skor"
+            app:argType="string" />
+    </fragment>
+</navigation>
